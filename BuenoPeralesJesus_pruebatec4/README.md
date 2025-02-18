@@ -71,4 +71,4 @@ En los metodos de crear reserva ( tanto para hoteles como para vuelos) tendremos
 
 El programa no contempla la opción de eliminar ninguna reserva ya que no se pide que se haga .
 
-Dentro de este programa hay una colección de todas las peticiones de postamn
+Dentro de este programa hay una colección de todas las peticiones de postman
