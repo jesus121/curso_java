@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "88371770-9bed-473d-b132-87c10b74f1a3",
+		"name": "Prueba-Tecnica-Jesus-BuenoPerales",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41092437"
+	},
+	"item": [
+		{
+			"name": "Vuelo",
+			"item": [
+				{
+					"name": "Crear un Vuelo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroVuelo\" : \"FTR-303\",\r\n    \"nombre\" : \"Tejedor\",\r\n    \"origen\" : \"Mayorca\",\r\n    \"destino\" : \"Tenerife\",\r\n    \"precioVuelo\" : 20.30,\r\n    \"fechaIda\" : \"2025-03-10\",\r\n    \"fechaVuelta\" : \"2025-02-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/agency/flights/new",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver todos los vuelos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agency/flights",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver vuelo por rango de fecha y localizacion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agency/flights/Fecha?fechaIda=2025-02-20&fechaVuelta=2025-02-25&destino=Madrid&origen=Valencia",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights",
+								"Fecha"
+							],
+							"query": [
+								{
+									"key": "fechaIda",
+									"value": "2025-02-20"
+								},
+								{
+									"key": "fechaVuelta",
+									"value": "2025-02-25"
+								},
+								{
+									"key": "destino",
+									"value": "Madrid"
+								},
+								{
+									"key": "origen",
+									"value": "Valencia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar un vuelo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"precioVuelo\" : 30073.375,\r\n  \"fechaVuelta\" : \"2025-02-20\",\r\n  \"fechaIda\" : \"2025-02-18\",\r\n  \"origen\" : \"Madir\",\r\n  \"destino\" : \"Japon\",\r\n  \"tipoAsiento\" : \"Doble\",\r\n  \"nombre\" : \"Pepe\",\r\n  \"numeroVuelo\" : \"FTR-321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/agency/flights/edit/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights",
+								"edit",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un vuelo por id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/agency/flights/552",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights",
+								"552"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver vuelo por id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/agency/flights/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flights",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotel",
+			"item": [
+				{
+					"name": "Ver todos los hoteles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agency/hotels",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver hoteles por rango de fecha y lugar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agency/hotels/habitacion?fechaInicioDisponible=2025-02-20&fechaFinalDisponible=2025-02-25&lugar=Madrid",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels",
+								"habitacion"
+							],
+							"query": [
+								{
+									"key": "fechaInicioDisponible",
+									"value": "2025-02-20"
+								},
+								{
+									"key": "fechaFinalDisponible",
+									"value": "2025-02-25"
+								},
+								{
+									"key": "lugar",
+									"value": "Madrid"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear un hotel",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fechaInicioDisponible\" : \"2025-02-18\",\r\n  \"lugar\" : \"Madrid\",\r\n  \"reserva\" : false,\r\n  \"codigoHotel\" : \"HOT-608\",\r\n  \"nombre\" : \"NH\",\r\n  \"fechaFinalDisponible\" : \"2025-02-20\",\r\n  \"habitacion\" : \"Double\",\r\n  \"precioHabitacion\" : 90.26\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/agency/hotels/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar un hotel",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fechaInicioDisponible\" : \"2025-02-18\",\r\n  \"lugar\" : \"Japon\",\r\n  \"reserva\" : false,\r\n  \"codigoHotel\" : \"HLR-025\",\r\n  \"nombre\" : \"NH\",\r\n  \"fechaFinalDisponible\" : \"2025-02-25\",\r\n  \"habitacion\" : \"Double\",\r\n  \"precioHabitacion\" : 90.163\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/agency/hotels/edit/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un hotel por id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/agency/hotels/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver hotel por Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/agency/hotels/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"hotels",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reserva",
+			"item": [
+				{
+					"name": "Crear reserva vuelo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fecha\" :  \"2025-02-20\",\r\n    \"origen\" : \"Valencia\",\r\n    \"destino\" : \"Madrid\",\r\n    \"codigoVuelo\" : \"FTR-226\",\r\n    \"numeroPersona\" : 5,\r\n    \"tipoAsiento\" : \"Double\",\r\n    \"nombrePersona\" : \"Juan, Pepe, alejandor,Maria,Mario\",\r\n    \"vuelo\" : {\r\n    \"precioVuelo\" : 60.3,\r\n    \"fechaVuelta\" : \"2025-02-25\",\r\n    \"fechaIda\" : \"2025-02-20\",\r\n    \"id\" : 1,\r\n    \"origen\" : \"Valencia\",\r\n    \"destino\" : \"Madrid\",\r\n    \"tipoAsiento\" : \"Bisnets\",\r\n    \"nombre\" : \"Tejedor\",\r\n    \"numeroVuelo\" : \"FTR-226\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/agency/flight-booking/new",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agency",
+								"flight-booking",
+								"new"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
