@@ -15,6 +15,8 @@ Para esta aplicación se ha utilizado lo siguientes programas :
 
 -Spring Boot
 
+-Postman
+
 **Funcionamiento** 
 
 En este apartado se informará sobre que necesita para que la aplicación funcione. 
@@ -66,4 +68,7 @@ En los apartados de reserva hotel y reserva vuelo podemos hacer lo siguiente :
 **Dato extra**
 
 En los metodos de crear reserva ( tanto para hoteles como para vuelos) tendremos que meterle todos los datos de estas clases , es decir , cuando quiera reservar un vuelo o un hotel se tendrá que proporcionar todos los campos de hotel o vuelo que querramos reservar .  
+
 El programa no contempla la opción de eliminar ninguna reserva ya que no se pide que se haga .
+
+Dentro de este programa hay una colección de todas las peticiones de postamn
